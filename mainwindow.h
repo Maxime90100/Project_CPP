@@ -14,7 +14,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void button_clicked();
+    void init();
+    void addTodo();
 
 private:
     Ui::MainWindow *ui;
