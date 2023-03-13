@@ -14,81 +14,102 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="appTitle">
+   <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>20</y>
-      <width>409</width>
-      <height>31</height>
+      <x>40</x>
+      <y>30</y>
+      <width>711</width>
+      <height>481</height>
      </rect>
     </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Black</family>
-      <pointsize>20</pointsize>
-      <italic>false</italic>
-      <bold>false</bold>
-      <underline>false</underline>
-      <strikeout>false</strikeout>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>ArrowCursor</cursorShape>
-    </property>
-    <property name="text">
-     <string>APP TITLE</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>361</width>
-      <height>341</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="todoAdd">
+    <layout class="QVBoxLayout" name="appLayout">
      <item>
-      <widget class="QLabel" name="todoAddTitle">
+      <widget class="QLabel" name="appTitle">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
+         <pointsize>20</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
        <property name="text">
-        <string>TITLE</string>
+        <string>APP TITLE</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="todoTitle"/>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="todoText"/>
-     </item>
-     <item>
-      <widget class="QDateEdit" name="todoDate"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="todoButton">
-       <property name="text">
-        <string>BUTTON</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="todoAddLayout">
+         <item>
+          <widget class="QLabel" name="todoAddLayoutTitle">
+           <property name="font">
+            <font>
+             <family>Arial Black</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>TITLE</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="todoAddTitle"/>
+         </item>
+         <item>
+          <widget class="QPlainTextEdit" name="todoAddText"/>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="todoAddDate"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="todoAddButton">
+           <property name="text">
+            <string>BUTTON</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="todoListLayout">
+         <item>
+          <widget class="QLabel" name="todoListTitle">
+           <property name="font">
+            <font>
+             <family>Arial Black</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>TITLE</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="todoList"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>

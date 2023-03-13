@@ -16,6 +16,7 @@ public:
     ~MainWindow();
     void init();
     void addTodo();
+    void updateForm();
 
 private:
     Ui::MainWindow *ui;
