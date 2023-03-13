@@ -11,6 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowTitle(appTitle);
     ui->appTitle->setText(appTitle);
+    ui->todoAddTitle->setText("Add a Todo");
+    ui->todoButton->setText("Add");
+
     QMessageBox::information(this, tr("Project C++ IUTBM S4"), tr("Welcome to %1 !\nCreated by THEVENEAU Maxime and PERRIN Antoine").arg(appTitle));
 }
 
