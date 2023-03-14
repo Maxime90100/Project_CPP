@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "todolistitem.h"
 #include <QMessageBox>
+#include <QTimer>
 
 // TODO LIST
 QPointer<QListWidget > _todoList;
@@ -74,10 +75,12 @@ void MainWindow::addTodo(){
         _todoList->addItem(newItem);
         _todoList->setItemWidget(newItem, itemWidget);
 
-        // Clear Form
-        _todoAddTitle->setText("");
-        _todoAddText->setPlainText("");
-        _todoAddDate->setDate(QDate::currentDate());
+        QTimer::singleShot(2000, [](){
+            // Clear Form
+            _todoAddTitle->setText("");
+            _todoAddText->setPlainText("");
+            _todoAddDate->setDate(QDate::currentDate());
+        });
     }
 }
 
