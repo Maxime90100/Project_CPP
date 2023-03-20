@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QTextEdit>
 #include <QDateEdit>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 class TodoListItem : public QWidget
@@ -15,12 +16,15 @@ public:
     void setTitle(const QString &title);
     void setText(const QString &text);
     void setDate(const QDate &date);
+    void edit();
 
 private:
     QLabel *m_titleLabel;
     QTextEdit *m_textEdit;
     QDateEdit *m_dateEdit;
+    QPushButton *m_pushButton;
     QVBoxLayout *m_layout;
+    bool editable;
 };
 
 #endif

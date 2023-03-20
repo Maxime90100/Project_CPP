@@ -70,13 +70,14 @@ void MainWindow::addTodo(){
         itemWidget->setTitle(_todoAddTitle->text());
         itemWidget->setText(_todoAddText->toPlainText());
         itemWidget->setDate(_todoAddDate->date());
+
         QListWidgetItem* newItem = new QListWidgetItem();
         newItem->setSizeHint(itemWidget->sizeHint());
         _todoList->addItem(newItem);
         _todoList->setItemWidget(newItem, itemWidget);
 
+        // Clear Form
         QTimer::singleShot(2000, [](){
-            // Clear Form
             _todoAddTitle->setText("");
             _todoAddText->setPlainText("");
             _todoAddDate->setDate(QDate::currentDate());
