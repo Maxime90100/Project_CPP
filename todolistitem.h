@@ -15,12 +15,14 @@ public:
     explicit TodoListItem(QWidget *parent = nullptr);
     void setTitle(const QString &title);
     void setText(const QString &text);
+    void setPriority(const QString &priority);
     void setDate(const QDate &date);
     void edit();
 
 private:
     QLabel *m_titleLabel;
     QTextEdit *m_textEdit;
+    QString m_priority;
     QDateEdit *m_dateEdit;
     QPushButton *m_pushButton;
     QVBoxLayout *m_layout;

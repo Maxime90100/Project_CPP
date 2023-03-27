@@ -17,6 +17,7 @@ public:
     void init();
     void addTodo();
     void updateForm();
+    void onRadioButtonClicked(bool);
 
 private:
     Ui::MainWindow *ui;

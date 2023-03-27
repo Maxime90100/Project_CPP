@@ -12,6 +12,7 @@ QPointer<QLineEdit> _todoAddTitle;
 QPointer<QPlainTextEdit> _todoAddText;
 QPointer<QDateEdit> _todoAddDate;
 QPointer<QPushButton> _todoAddButton;
+QString priority;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -49,6 +50,11 @@ void MainWindow::init(){
     _todoAddText = ui->todoAddText;
     connect(_todoAddText, &QPlainTextEdit::textChanged, this, &MainWindow::updateForm);
 
+    connect(ui->LowPriority, &QRadioButton::clicked, this, &MainWindow::onRadioButtonClicked);
+    connect(ui->mediumPriority, &QRadioButton::clicked, this, &MainWindow::onRadioButtonClicked);
+    priority = ui->mediumPriority->text();
+    connect(ui->highPriority, &QRadioButton::clicked, this, &MainWindow::onRadioButtonClicked);
+
     _todoAddDate = ui->todoAddDate;
     connect(_todoAddDate, &QDateEdit::dateChanged, this, &MainWindow::updateForm);
     _todoAddDate->setDate(QDate::currentDate());
@@ -70,6 +76,7 @@ void MainWindow::addTodo(){
         itemWidget->setTitle(_todoAddTitle->text());
         itemWidget->setText(_todoAddText->toPlainText());
         itemWidget->setDate(_todoAddDate->date());
+        itemWidget->setPriority(priority);
 
         QListWidgetItem* newItem = new QListWidgetItem();
         newItem->setSizeHint(itemWidget->sizeHint());
@@ -84,6 +91,15 @@ void MainWindow::addTodo(){
         });
     }
 }
+
+void MainWindow::onRadioButtonClicked(bool checked)
+{
+    QRadioButton* radioButton = qobject_cast<QRadioButton*>(sender());
+    if (radioButton && checked) {
+        priority = radioButton->text();
+    }
+}
+
 
 void MainWindow::updateForm(){
     // Reset Button

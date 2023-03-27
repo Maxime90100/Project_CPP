@@ -34,6 +34,19 @@ void TodoListItem::setTitle(const QString &title)
 void TodoListItem::setText(const QString &text)
 {
     m_textEdit->setPlainText(text);
+    //QSizeF docSize = m_textEdit->document()->size();
+    //m_textEdit->setFixedHeight(docSize.height() + m_textEdit->frameWidth() * 2);
+}
+
+void TodoListItem::setPriority(const QString &priority){
+    m_priority = priority;
+    if(m_priority == "High"){
+        m_titleLabel->setStyleSheet("color: red");
+    }else if(m_priority == "Medium"){
+        m_titleLabel->setStyleSheet("color: orange");
+    }else{
+        m_titleLabel->setStyleSheet("color: green");
+    }
 }
 
 void TodoListItem::setDate(const QDate &date)

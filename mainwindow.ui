@@ -79,6 +79,34 @@
           <widget class="QPlainTextEdit" name="todoAddText"/>
          </item>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QRadioButton" name="LowPriority">
+             <property name="text">
+              <string>Low</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="mediumPriority">
+             <property name="text">
+              <string>Medium</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="highPriority">
+             <property name="text">
+              <string>High</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <widget class="QDateEdit" name="todoAddDate"/>
          </item>
          <item>
