@@ -34,6 +34,7 @@ void TodoListItem::setTitle(const QString &title)
 void TodoListItem::setText(const QString &text)
 {
     m_textEdit->setPlainText(text);
+    m_textEdit->setFixedHeight(m_textEdit->fontMetrics().height() + m_textEdit->frameWidth() * 2);
     //QSizeF docSize = m_textEdit->document()->size();
     //m_textEdit->setFixedHeight(docSize.height() + m_textEdit->frameWidth() * 2);
 }
