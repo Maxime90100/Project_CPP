@@ -58,6 +58,9 @@ void MainWindow::init(){
     _todoAddDate = ui->todoAddDate;
     connect(_todoAddDate, &QDateEdit::dateChanged, this, &MainWindow::updateForm);
     _todoAddDate->setDate(QDate::currentDate());
+
+    connect(ui->SortButton, &QPushButton::clicked, this, &MainWindow::sortTodo);
+
 }
 
 void MainWindow::addTodo(){
@@ -80,6 +83,16 @@ void MainWindow::addTodo(){
 
         QListWidgetItem* newItem = new QListWidgetItem();
         newItem->setSizeHint(itemWidget->sizeHint());
+        if (priority == "High") {
+            newItem->setBackground(QColor(255, 0, 0));
+        }
+        else if (priority == "Medium") {
+            newItem->setBackground(QColor(255, 127, 0));
+        }
+        else {
+            newItem->setBackground(QColor(0, 255, 0));
+        }
+
         _todoList->addItem(newItem);
         _todoList->setItemWidget(newItem, itemWidget);
 
@@ -107,4 +120,17 @@ void MainWindow::updateForm(){
     _todoAddButton->setStyleSheet("background-color: white; color: black");
 }
 
+void MainWindow::sortTodo() {
+    static bool sorted = false;
+    if (!sorted) {
+        // trier la liste en ordre croissant de date
+        _todoList->sortItems(Qt::AscendingOrder);
+        sorted = true;
+    }
+    else {
+        // trier dans l'ordre décroissant de dates
+        _todoList->sortItems(Qt::DescendingOrder);
+        sorted = false;
+    }
+}
 

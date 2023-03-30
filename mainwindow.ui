@@ -133,6 +133,41 @@
           </widget>
          </item>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QRadioButton" name="LowPrioritySort">
+             <property name="text">
+              <string>Low</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="mediumPrioritySort">
+             <property name="text">
+              <string>Medium</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="highPrioritySort">
+             <property name="text">
+              <string>High</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="SortButton">
+           <property name="text">
+            <string>PushButton</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QListWidget" name="todoList"/>
          </item>
         </layout>
@@ -148,7 +183,7 @@
      <x>0</x>
      <y>0</y>
      <width>788</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

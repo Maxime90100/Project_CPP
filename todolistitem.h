@@ -18,6 +18,7 @@ public:
     void setPriority(const QString &priority);
     void setDate(const QDate &date);
     void edit();
+    void setColor(const QColor &color);
 
 private:
     QLabel *m_titleLabel;
