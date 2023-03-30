@@ -84,13 +84,13 @@ void MainWindow::addTodo(){
         QListWidgetItem* newItem = new QListWidgetItem();
         newItem->setSizeHint(itemWidget->sizeHint());
         if (priority == "High") {
-            newItem->setBackground(QColor(255, 0, 0));
+            newItem->setBackground(QColor(255, 0, 0).darker(75));
         }
         else if (priority == "Medium") {
-            newItem->setBackground(QColor(255, 127, 0));
+            newItem->setBackground(QColor(255, 127, 0).darker(75));
         }
         else {
-            newItem->setBackground(QColor(0, 255, 0));
+            newItem->setBackground(QColor(0, 255, 0).darker(150));
         }
 
         _todoList->addItem(newItem);
